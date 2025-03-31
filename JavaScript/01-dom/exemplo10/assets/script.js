@@ -19,3 +19,9 @@ spanContent.textContent = "Lista";
 
 divBox.insertAdjacentElement("afterbegin",spanTitle);
 divBox.insertAdjacentElement("beforeend",spanContent);
+
+const divName = document.createElement("div");
+divName.textContent = "Fábio Santos";
+divName.id = "box";
+console.log(divName);
+body.appendChild(divName);
