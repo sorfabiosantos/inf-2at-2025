@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 50px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+Valor 1 <input id="value01" type="text" value="3"> +
+Valor 2 <input id="value02" type="text" value="5"> =
+<div id="result"></div>
+<button id="sum">Somar</button>
+<button id="sub">Subtrair</button>
+<button id="multi">Multiplicar</button>
+</body>
+<script>
+
+    // Busque os elementos input com os ids "value01" e "value02" e atribua a variável let value01 e value02
+    let value01 = document.querySelector("#value01");
+    let value02 = document.querySelector("#value02");
+
+    // Defina uma const buttonSum, depois busque o elemento com o id "sum" com document.querySelector("") e atribua a const buttonSum
+    const buttonSum = document.querySelector("#sum");
+
+    // Adicione ouvinte de evento de clique ao botão buttonSum
+    buttonSum.addEventListener("click", () =>
+    {
+        //  Defina uma variável let sum e atribua a soma dos valores dos inputs value01 e value02, a função Number() converte o valor do input em número
+        let sum = Number(value01.value) + Number(value02.value);
+        // Com document.querySelector("") selecione o elemento com o id "result" e atribua para a propriedade textContent a variável sum
+        document.querySelector("#result").textContent = sum;
+    });
+
+    // Agora faça o mesmo para o botão de subtração
+    // Abaixo foi criado uma const buttonSub, depois com document.querySelector o elemento com o id "sub" foi atribuido a const buttonSub
+    const buttonSub = document.querySelector("#sub");
+
+    // Abaixo já foi adicionado o ouvinte de evento no botão buttonSub
+    buttonSub.addEventListener("click", () =>
+    {
+        // Defina uma variável let sub e atribua a subtração dos valores dos inputs value01 e value02
+
+        // Busque o elemento com o id "result" e atribua a const result
+
+    });
+
+    // Agora faça o mesmo para o botão de multiplicação
+
+
+
+</script>
+</html>

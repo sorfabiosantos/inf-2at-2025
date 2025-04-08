@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tela de Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #form-login {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        #form-login label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #form-login input[type="text"], #form-login input[type="email"], #form-login input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        #form-login button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        #form-login button:hover {
+            background-color: #0056b3;
+        }
+
+        #message {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<!-- Formulário para Login Email, Senha, um botão de enviar, abaixo uma caixa para mensagem de retorno -->
+<form id="form-login">
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email">
+    <label for="password">Senha:</label>
+    <input type="text" name="password" id="password">
+    <button id="btn-login">Enviar</button>
+    <div id="message">Aqui vão as mensagens de retorno</div>
+</form>
+</body>
+<script>
+// abaixo foram criadas as constantes usuarioAluno e senhaAluno, usuarioProfessor e senhaProfessor
+// para nomear as variáveis se usa a seguinte convenção: todas as letras minusculas, e se o nome da variável for composto usa-se letra maiúscula quando trocar a palavra
+const usuarioAluno = "aluno";
+const senhaAluno = "123456";
+const usuarioProfessor = "professor";
+const senhaProfessor = "654321";
+
+// Defina uma const password para receber com document.querySelector o elemento input com id password
+
+// Defina uma const email para receber com document.querySelector o elemento input com id email
+
+// Abaixo foi criada uma const formLogin que recebe o elemento formulário com id form-login, através do document.querySelector
+const formLogin = document.querySelector('#form-login');
+// abaixo foi adicionado ao formLogin um evento de click, que vai executar uma função anônima quando o botão for clicado
+formLogin.addEventListener("click", () => {
+   // primeiro compare os valores digitados nos inputs email e password com os valores das constantes usuarioAluno e senhaAluno
+});
+
+</script>
+</html>
