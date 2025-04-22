@@ -80,7 +80,8 @@ const senhaProfessor = "654321";
 // Abaixo foi criada uma const formLogin que recebe o elemento formulário com id form-login, através do document.querySelector
 const formLogin = document.querySelector('#form-login');
 // abaixo foi adicionado ao formLogin um evento de click, que vai executar uma função anônima quando o botão for clicado
-formLogin.addEventListener("click", () => {
+formLogin.addEventListener("click", (event) => {
+    event.preventDefault();
    // primeiro compare os valores digitados nos inputs email e password com os valores das constantes usuarioAluno e senhaAluno
 });
 
