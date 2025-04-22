@@ -1,4 +1,5 @@
 let arrayNames = [];
+let myIndex;
 const nameList = document.querySelector("#name-list");
 const name = document.querySelector("#name");
 const buttonAdd = document.querySelector("#add");
@@ -7,12 +8,11 @@ const buttonRemove = document.querySelector("#remove");
 function showList () {
     nameList.textContent = "";
     for(let i = 0; i < arrayNames.length; i++){
-        console.log(arrayNames[i]);
         const newName = document.createElement("li");
         newName.textContent = arrayNames[i];
         newName.setAttribute("index", i);
-        console.log(newName);
         nameList.appendChild(newName);
+        console.log(newName);
     }
 }
 
@@ -22,10 +22,13 @@ buttonAdd.addEventListener("click", () => {
 });
 
 buttonRemove.addEventListener("click", (event) => {
-    console.log("Remover");
-    console.log(event.target.getAttribute("index"));
+    // remover a posição myIndex do vetor arrayNames
+    // pesquisando uma função no JS que remove uma posição específica de um arary
+    console.log(myIndex);
+    showList();
 });
 
 nameList.addEventListener("click", (event) => {
-    console.log(event.target);
+    console.log(event.target.getAttribute("index"));
+    myIndex = event.target.getAttribute("index");
 });
