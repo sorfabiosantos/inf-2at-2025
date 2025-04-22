@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Lista de Nomes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        header h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        section p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Gerenciar Lista de Nomes</h1>
+</header>
+<section>
+    <form>
+        <label for="name">Digite um nome:</label>
+        <input type="text" id="name" placeholder="Digite um nome">
+        <div class="button-group">
+            <button type="button" id="add">Incluir</button>
+            <button type="button" id="remove">Excluir</button>
+            <button type="button" id="sort">Ordenar</button>
+        </div>
+    </form>
+</section>
+<section>
+    <p>Quantidade de nomes na lista: <span id="count">3</span></p>
+</section>
+<section>
+    <h2>Lista de Nomes</h2>
+    <ul id="name-list">
+        <li>João</li>
+        <li>Maria</li>
+        <li>Pedro</li>
+    </ul>
+</section>
+</body>
+<script>
+   // define addButton e atribuindo com querySelector o elemento com id add
+   const addButton = document.querySelector('#add');
+   // adicionando um evento de clique ao botão addButton
+   addButton.addEventListener("click", () => {
+       console.log("Adicionando nome");
+   });
+   // Faça o mesmo com o botão removeButton
+   // defina o removeButton e atribuindo com querySelector o elemento com id remove
+
+   // adicionando um evento de clique ao botão removeButton
+
+</script>
+</html>
