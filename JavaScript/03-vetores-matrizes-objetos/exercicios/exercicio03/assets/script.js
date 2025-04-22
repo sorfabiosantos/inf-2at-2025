@@ -10,6 +10,8 @@ function showList () {
         console.log(arrayNames[i]);
         const newName = document.createElement("li");
         newName.textContent = arrayNames[i];
+        newName.setAttribute("index", i);
+        console.log(newName);
         nameList.appendChild(newName);
     }
 }
@@ -19,8 +21,9 @@ buttonAdd.addEventListener("click", () => {
     showList();
 });
 
-buttonRemove.addEventListener("click", () => {
-
+buttonRemove.addEventListener("click", (event) => {
+    console.log("Remover");
+    console.log(event.target.getAttribute("index"));
 });
 
 nameList.addEventListener("click", (event) => {
