@@ -2,6 +2,7 @@ let arrayNames = [];
 const nameList = document.querySelector("#name-list");
 const name = document.querySelector("#name");
 const buttonAdd = document.querySelector("#add");
+const buttonRemove = document.querySelector("#remove");
 
 function showList () {
     nameList.textContent = "";
@@ -16,4 +17,12 @@ function showList () {
 buttonAdd.addEventListener("click", () => {
     arrayNames.push(name.value);
     showList();
+});
+
+buttonRemove.addEventListener("click", () => {
+
+});
+
+nameList.addEventListener("click", (event) => {
+    console.log(event.target);
 });
