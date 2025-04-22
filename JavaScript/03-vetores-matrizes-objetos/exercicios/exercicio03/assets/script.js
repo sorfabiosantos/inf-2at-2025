@@ -23,7 +23,7 @@ buttonAdd.addEventListener("click", () => {
 
 buttonRemove.addEventListener("click", (event) => {
     // remover a posição myIndex do vetor arrayNames
-    // pesquisando uma função no JS que remove uma posição específica de um arary
+    // pesquisar uma função no JS que remove uma posição específica de um array
     console.log(myIndex);
     showList();
 });
