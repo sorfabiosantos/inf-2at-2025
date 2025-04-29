@@ -1,18 +1,24 @@
-
-
-
-
-
+let arrayPlays = [];
 const board = document.querySelector("#board");
 let play = "O";
 
+function win () {
+    if(arrayPlays[1] === arrayPlays [4] && arrayPlays[1] === arrayPlays[7]) {
+        console.log(`Venceu o ${arrayPlays[1]}`);
+    }
+}
+
 board.addEventListener("click", (event) => {
+    console.log(event.target);
     if(play === "O") {
         play = "X";
     } else {
         play = "O";
     }
+    arrayPlays[event.target.getAttribute("id")] = play;
+    console.table(arrayPlays);
     event.target.textContent = play;
+    win();
 });
 
 // reset do jogo da velha
