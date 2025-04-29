@@ -58,14 +58,6 @@ Implemente um **Jogo da Memória** utilizando as tecnologias HTML, CSS e JavaScr
 
 ---
 
-## Entrega
-
-- Submeta os arquivos `index.html`, `style.css` e `script.js`.
-- Certifique-se de que o código está funcional e bem documentado.
-- Inclua comentários no código explicando as principais partes da lógica.
-
----
-
 ## Dicas
 
 - Utilize `Math.random()` para embaralhar as cartas.
