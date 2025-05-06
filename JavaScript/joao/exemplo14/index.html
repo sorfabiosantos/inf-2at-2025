@@ -42,6 +42,17 @@
         vet[index] = vet[index] + 2;
     });
     console.log(array);
+
+    console.log(pessoas);
+
+    pessoas.forEach((value, index, vet) => {
+        console.log(value.nome, value.idade);
+        value.idade++;
+        //vet[index].idade++;
+    });
+
+    console.log(pessoas);
+
 </script>
 </body>
 </html>
