@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<h1>Lista de Tarefas</h1>
+<form>
+    <input type="text" id="tarefa" placeholder="Digite uma tarefa">
+    <button type="button" id="adicionar-tarefa">Adicionar</button>
+</form>
+<ul id="lista-tarefas"></ul>
+</body>
+<script>
+    // Seleciona o botão pelo id "adicionar-tarefa"
+
+    // Adiciona um evento de clique ao botão
+    botaoAdicionar.addEventListener('click', () => {
+        // Obtém o valor do input com id "tarefa"
+
+
+        // Cria um novo elemento li com document.createElement
+
+        // Define o texto do li como o valor do input
+
+        // Adiciona o li à lista com id "lista-tarefas" com appendChild
+
+    });
+</script>
+</html>
