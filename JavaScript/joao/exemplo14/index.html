@@ -3,55 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objetos</title>
+    <title>Lista de Notícias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        main {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .noticia {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .noticia:last-child {
+            border-bottom: none;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
+<main>
+    <h1>Lista de Notícias</h1>
+    <section id="listaNoticias">
+        <article class="noticia">
+            <h2>Notícia 1</h2>
+            <p>Conteúdo da primeira notícia.</p>
+        </article>
+        <article class="noticia">
+            <h2>Notícia 2</h2>
+            <p>Conteúdo da segunda notícia.</p>
+        </article>
+    </section>
+</main>
 <script>
-    const pessoas = [
-        {
-            nome: 'João',
-            idade: 16,
-            email: 'joao.silva@gmail.com',
-        },
-        {
-            nome: 'Marcelo',
-            idade: 38,
-            email: 'marcelozucca@gmail.com',
-        },
-        {
-            nome: 'Maria',
-            idade: 19,
-            email: 'mama2001@gmail.com',
-        },
-        {
-            nome: 'Rafaela',
-            idade: 12,
-            email: 'rafafanti@gmail.com',
-        },
-        {
-            nome: 'Guilherme',
-            idade: 24,
-            email: 'guilhermecardoso@gmail.com',
-        },
-    ];
+/*
+ Instrução geral
+ Este exercício ensina como manipular o DOM para adicionar novas notícias à página.
+ Você tem uma seção HTML contendo duas notícias.
+ Na body tempos uma tag main (principal) com uma seção (section) que contém duas notícias (article).
+ Dentro de cada article temos um h2 (título da notícia) e um p (conteúdo da notícia).
+ Seu objetivo é criar e adicionar uma nova notícia (article) com um título (h2) e um conteúdo (p).
+ Siga os passos abaixo:
+*/
+// 1 selecionar com document.querySelector a tag section e atribuir para const sessao
 
-    const array = [1, 2, 3, 4, 5, 6];
-    console.log(array);
-    array.forEach((value,index,vet) => {
-        console.log(index, value);
-        vet[index] = vet[index] + 2;
-    });
-    console.log(array);
+// 2 criar com document.createElement um article e atribuir para const artigo, essa tag representará a notícia
 
-    console.log(pessoas);
+// 3 criar com document.createElement um h2 para o título da notícia e atribuir para a const titulo
 
-    pessoas.forEach((value, index, vet) => {
-        console.log(value.nome, value.idade);
-        value.idade++;
-        //vet[index].idade++;
-    });
+// 4 acessar a propriedade textContent da const titulo e atribuir a string "Notícia 3"
 
-    console.log(pessoas);
+// 5 criar com document.createElement um p para o conteúdo da notícia e atribuir para a const conteudo
+
+// 6 acessar a propriedade textContent da const conteudo e atribuir a string "Conteúdo da terceira notícia."
+
+// 7 utilizar o método appendChild da const artigo para incluir a const titulo
+
+// 8 utilizar o método appendChild da const artigo para incluir a const conteudo
 
 </script>
 </body>

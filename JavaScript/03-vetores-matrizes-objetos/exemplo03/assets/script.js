@@ -36,7 +36,7 @@ array.forEach((value,index,vet) => {
 console.log(array);
 */
 
-console.log(pessoas);
+//console.log(pessoas);
 
 pessoas.forEach((value, index, vet) => {
     console.log(value.nome, value.idade);
@@ -44,4 +44,4 @@ pessoas.forEach((value, index, vet) => {
     //vet[index].idade++;
 });
 
-console.log(pessoas);
+//console.log(pessoas);
