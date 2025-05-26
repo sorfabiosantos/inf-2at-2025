@@ -19,6 +19,35 @@ const faqs = [
     {
         question: "O que é poluição do ar?",
         answer: "A poluição do ar é a presença de substâncias nocivas na atmosfera, como gases tóxicos, partículas em suspensão e compostos químicos prejudiciais à saúde humana e ao meio ambiente."
-
     }
 ];
+
+
+const lisFaqs = document.querySelector(".faq-section");
+
+faqs.forEach((element) => {
+    //console.log(element.question, element.answer);
+    const article = document.createElement("article");
+    article.innerHTML = `
+        <h2 class="faq-question">${element.question}</h2>
+        <p class="faq-answer">${element.answer}</p>
+    `;
+    //console.log(article);
+    lisFaqs.appendChild(article);
+});
+
+lisFaqs.addEventListener("click", (element) => {
+
+    if(element.target.tagName === "H2") {
+        //console.log("click", element.target.tagName);
+        //console.log(element.target.nextElementSibling);
+        console.log(element.target.nextElementSibling.style.display);
+        //element.target.nextElementSibling.style.display = "block";
+        if(element.target.nextElementSibling.style.display === "block") {
+            element.target.nextElementSibling.style.display = "none";
+        } else {
+            element.target.nextElementSibling.style.display = "block";
+        }
+
+    }
+});
