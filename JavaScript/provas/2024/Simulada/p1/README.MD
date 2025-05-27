@@ -8,7 +8,7 @@ A prova consiste em 3 questões. O objetivo é avaliar os conhecimentos em manip
 
 ### Questão 01 - Perguntas Frequentes (FAQ)
 
-Implemente uma seção de **Perguntas Frequentes (FAQ)** na página `about.html`. O objetivo é criar uma interface funcional que permita:
+Implemente uma seção de **Perguntas Frequentes (FAQ)** na página `about.html` `script-about.js`. O objetivo é criar uma interface funcional que permita:
 
 1. **Exibir uma lista de perguntas e respostas**:
    - Cada pergunta deve ser clicável.
@@ -51,7 +51,7 @@ Além disso, implemente a funcionalidade de **busca de produtos**:
    - Caso nenhum produto corresponda ao termo pesquisado, exiba uma mensagem indicando que nenhum produto foi encontrado.
 
 
-O objeto `products` possui a seguinte estrutura:
+A lista de objetos `products` possui a seguinte estrutura:
 
 ```javascript
 
@@ -71,13 +71,15 @@ let products = [
 
 ### Questão 03 - Cadastro de Usuários
 
-Implemente a funcionalidade de cadastro de usuários na página `register.html`. O objetivo é criar uma interface funcional que permita:
+Implemente a funcionalidade de cadastro de usuários na página `register.html` `script-register.js`. O objetivo é criar uma interface funcional que permita:
 
 1. **Cadastrar novos usuários** com os seguintes campos:
    - Nome
    - Email
    - Senha
+   
 ```javascript
+
 usersList = [
     {
         name: "João Silva",
@@ -90,6 +92,7 @@ usersList = [
       password: "1234senha"
    }
 ];
+
 ```
 
 2. **Exibir a lista de usuários cadastrados** logo abaixo do formulário. Cada usuário deve ser exibido com:
