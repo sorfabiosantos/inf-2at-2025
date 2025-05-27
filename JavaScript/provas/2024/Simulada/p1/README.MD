@@ -34,6 +34,7 @@ O objeto `products` possui a seguinte estrutura:
 }
 
 ```
+Buscador  
 
 ---
 

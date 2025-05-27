@@ -1,34 +1,73 @@
 let products = [
     {
-        name: "Ar Condicionado Modelo 1",
+        name: "LG Dual Inverter",
         image: "assets/images/image01.jpeg",
     },
     {
-        name: "Ar Condicionado Modelo 2",
+        name: "Samsung Wind-Free",
         image: "assets/images/image02.jpeg",
     },
     {
-        name: "Ar Condicionado Modelo 3",
+        name: "Daikin Split Hi-Wall",
         image: "assets/images/image03.jpeg",
     },
     {
-        name: "Ar Condicionado Modelo 4",
+        name: "Fujitsu Inverter",
         image: "assets/images/image04.jpeg",
     },
     {
-        name: "Ar Condicionado Modelo 5",
+        name: "Midea Liva",
         image: "assets/images/image05.jpeg",
     },
     {
-        name: "Ar Condicionado Modelo 6",
+        name: "Gree Eco Garden",
         image: "assets/images/image06.jpeg",
     },
     {
-        name: "Ar Condicionado Modelo 7",
+        name: "Philco Eco Inverter",
         image: "assets/images/image07.jpeg",
     },
     {
-        name: "Ar Condicionado Modelo 8",
+        name: "Springer Midea Evolution",
         image: "assets/images/image08.jpeg",
     }
 ];
+
+const sectionProducts = document.querySelector(".product-list");
+
+products.forEach((product) => {
+    //console.log(product.name, product.image);
+    const articleProduct = document.createElement("article");
+    articleProduct.className = "product-item";
+    //console.log(articleProduct);
+    articleProduct.innerHTML = `
+        <figure>
+           <img src="${product.image}" alt="${product.name}" class="product-image">
+           <figcaption>${product.name}</figcaption>
+        </figure>
+    `;
+    sectionProducts.appendChild(articleProduct);
+});
+
+const searchInput = document.querySelector("#search");
+const searchButton = document.querySelector("#search-button");
+
+searchButton.addEventListener("click", () => {
+    console.log("Buscar: " , searchInput.value);
+    sectionProducts.innerHTML = "";
+    products.forEach((product) => {
+        console.log(product.name, searchInput.value);
+        if(product.name === searchInput.value){
+            const articleProduct = document.createElement("article");
+            articleProduct.className = "product-item";
+            //console.log(articleProduct);
+            articleProduct.innerHTML = `
+            <figure>
+               <img src="${product.image}" alt="${product.name}" class="product-image">
+               <figcaption>${product.name}</figcaption>
+            </figure>
+            `;
+            sectionProducts.appendChild(articleProduct);
+        }
+    });
+});
