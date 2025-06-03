@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 04 - João</title>
+</head>
+<body>
+<h1>Contador de Palavras</h1>
+<textarea id="texto" rows="5" cols="30" placeholder="Digite seu texto aqui..."></textarea>
+<button id="botao">Contar Palavras</button>
+<div id="resultado"></div>
+</body>
+</html>
+<script>
+// Selecione o elemento textarea com ID texto e atribua à variável const texto
+const texto = document.querySelector('#texto');
+
+// Selecione o elemento button com ID botao e atribua à variável const botao
+const botao = document.querySelector('#botao');
+
+// Selecione o elemento div com ID resultado e atribua à variável const resultado
+const resultado = document.querySelector('#resultado');
+
+// Adicione um evento de clique ao botão para executar a contagem de palavras
+botao.addEventListener('click', () => {
+    // Acesse o valor do texto digitado no textarea
+    const conteudoTexto = texto.value;
+
+    // Divida o texto em palavras usando o método split e remova espaços extras
+    const palavras = conteudoTexto.trim().split(/\s+/);
+
+    // Conte o número de palavras no array palavras
+    const numeroDePalavras = palavras.length;
+
+    // Exiba o número de palavras na div resultado
+    resultado.textContent = `Número de palavras: ${numeroDePalavras}`;
+});
+</script>
