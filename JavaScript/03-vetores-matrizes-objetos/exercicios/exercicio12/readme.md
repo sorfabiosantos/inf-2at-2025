@@ -13,10 +13,6 @@ Implemente uma aplicação web para gerenciamento de produtos utilizando HTML, C
 3. **Ordenação**
     - Implemente um botão para ordenar os produtos (por nome, preço ou quantidade, a critério do aluno).
 
-4. **Estilização**
-    - Utilize CSS para criar um layout moderno, limpo e responsivo.
-    - O formulário, a lista de produtos e os botões devem ser visualmente destacados.
-
 #### Estrutura sugerida dos arquivos
 
 - `index.html`: Estrutura da página.
