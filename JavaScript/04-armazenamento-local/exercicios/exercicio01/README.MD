@@ -3,6 +3,11 @@
 Nesta prova, você irá implementar um sistema simples de gerenciamento de alunos utilizando JavaScript. O sistema permitirá a adição e a exclusão de alunos, exibição da lista de alunos cadastrados, e cálculo da média das notas.
 
 ---
+## Utilizando LocalStorage
+
+- Armazene as informações dos estudantes em `localStorage`, na chave `students` para que os dados persistam mesmo após o recarregamento da página. Utilize o método `JSON.stringify()` para armazenar o array `students` e `JSON.parse()` para recuperá-lo.
+- Ao carregar a página, verifique se há dados no `localStorage` e, se houver, recupere-os e atribua ao array `students`. Caso contrário, inicialize o array como vazio.
+- Armazene as alterações no `localStorage` sempre que houver uma adição ou exclusão de alunos, utilizando `localStorage.setItem('students', JSON.stringify(students))`.
 
 ## Questão 01 - Exibição da Lista de Alunos (3,0 pontos)
 
@@ -76,9 +81,3 @@ Implemente a funcionalidade de cálculo da média das notas:
 
 2. **(0,5)** Exiba mensagem de erro:
    - Caso não haja alunos cadastrados, exiba uma mensagem de erro no elemento com class `errorMessage` `Não é possível calcular a média sem alunos.`. 
-
-## Utilizando LocalStorage
-
-   - Armazene as informações dos estudantes em `localStorage`, na chave `students` para que os dados persistam mesmo após o recarregamento da página. Utilize o método `JSON.stringify()` para armazenar o array `students` e `JSON.parse()` para recuperá-lo.
-   - Ao carregar a página, verifique se há dados no `localStorage` e, se houver, recupere-os e atribua ao array `students`. Caso contrário, inicialize o array como vazio.
-   - Armazene as alterações no `localStorage` sempre que houver uma adição ou exclusão de alunos, utilizando `localStorage.setItem('students', JSON.stringify(students))`.
