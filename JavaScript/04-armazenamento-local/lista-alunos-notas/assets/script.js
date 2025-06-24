@@ -1,22 +1,14 @@
 // Lista de objetos para armazenar os alunos
 let students = [
-    {
-        name: "John",
-        grade: 5
-    },
-    {
-        name: "James",
-        grade: 3
-    }
-];
 
-console.log(localStorage.getItem("studentsAfternoon"));
+];
 
 const studentList = document.querySelector(".students-list");
 
 function renderStudents() {
-    studentList.innerHTML = '';
+    localStorage.setItem("studentsAfternoon", JSON.stringify(students));
 
+    studentList.innerHTML = '';
     if(students.length === 0){
         studentList.innerHTML = `
            <div class="empty-state">
@@ -37,6 +29,14 @@ function renderStudents() {
     }
 }
 
+console.log("Entrada do sistema: ",localStorage.getItem("studentsAfternoon"));
+
+if(localStorage.getItem("studentsAfternoon")){
+    const stringStudents = localStorage.getItem("studentsAfternoon");
+    students = JSON.parse(stringStudents);
+    //renderStudents();
+}
+
 renderStudents();
 
 const inputName = document.querySelector("#studentName");
@@ -54,6 +54,8 @@ insertButton.addEventListener("click", (event) => {
             grade: inputGrade.value,
         };
         students.push(newStudent);
+        // atualizar o localStorage
+        //console.log(JSON.stringify(students));
         renderStudents();
         inputName.value = "";
         inputGrade.value = "";
@@ -65,7 +67,7 @@ studentList.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
         console.log("oi, vou excluir aluno: " + event.target.getAttribute("idStudent"));
         students.splice(event.target.getAttribute("idStudent"),1);
-        console.log(students);
+        //console.log(students);
         renderStudents();
     }
 });
