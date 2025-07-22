@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo de Combustível</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f7ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        main {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 500px;
+            padding: 35px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #3a5a78;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #c8d6e5;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        output {
+            display: block;
+            margin-top: 25px;
+            padding: 18px;
+            background-color: #ebf5fb;
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .excelente { color: #27ae60; }
+        .bom { color: #2ecc71; }
+        .regular { color: #f39c12; }
+        .ruim { color: #e67e22; }
+        .pessimo { color: #c0392b; }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 25px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Calculadora de Consumo de Combustível</h1>
+        </header>
+
+        <section>
+            <label for="distancia">Distância percorrida (km):</label>
+            <input type="text" id="distancia" placeholder="Digite a distância em quilômetros">
+        </section>
+
+        <section>
+            <label for="combustivel">Combustível gasto (litros):</label>
+            <input type="text" id="combustivel" placeholder="Digite a quantidade de combustível em litros">
+        </section>
+
+        <section>
+            <button type="button" id="calcular">Calcular Consumo</button>
+        </section>
+
+        <output id="resultado">O consumo do veículo aparecerá aqui</output>
+    </main>
+
+    <script>
+        // Selecione o elemento input com o ID distancia e atribua à variável const distancia
+
+        // Selecione o elemento input com o ID combustivel e atribua à variável const combustivel
+
+        // Selecione o elemento button com o ID calcular e atribua à variável const calcular
+
+        // Selecione o elemento output com o ID resultado e atribua à variável const resultado
+
+        calcular.addEventListener("click", () => {
+            console.log("Botão calcular clicado");
+            // criar let consumo
+
+            // calcular consumo = distancia.value / combustivel.value
+
+            // se consumo >= 15 resultado.textContent = "Excelente"
+
+            // se consumo >= 12 e consumo < 15 resultado.textContent = "Bom"
+
+            // se consumo >= 9 e consumo < 12 resultado.textContent = "Regular"
+
+            // se consumo >= 6 e consumo < 9 resultado.textContent = "Ruim"
+
+            // se consumo < 6 resultado.textContent = "Péssimo"
+
+        });
+    </script>
+</body>
+</html>
