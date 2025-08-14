@@ -12,6 +12,7 @@ Requisitos:
 - Usar print_r($frutas);
 
 Saída (formato aproximado):
+
 ```
 Array ( [0] => Maçã [1] => Banana [2] => Uva )
 ```
