@@ -17,7 +17,10 @@ Saída (formato aproximado):
 Array ( [0] => Maçã [1] => Banana [2] => Uva )
 ```
 
-Dica: Para ver melhor, você pode envolver a saída em <pre>...</pre>.
+Dica: Para ver melhor, você pode envolver a saída em:
+````HTML
+<pre>...</pre>.
+````
 
 Desafio extra: Adicione mais duas frutas e exiba novamente.
 
