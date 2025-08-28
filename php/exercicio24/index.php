@@ -1,6 +1,5 @@
 <?php
 $message = filter_input(INPUT_GET, 'message', FILTER_DEFAULT);
-var_dump($message);
 ?>
 
 <html lang="pt-br">
