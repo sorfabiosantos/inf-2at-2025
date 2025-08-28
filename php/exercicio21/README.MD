@@ -21,8 +21,9 @@ Olá, Maria Silva! Você tem 16 anos.
 
 Dica:
 - Use a função trim() para remover espaços extras dos textos.
-- Para voltar ao formulário, use um link simples: 
+- Para voltar ao formulário, use um link simples:
+
 ```html
-<a href="index.php">Voltar</a>.
+<a href="index.html">Voltar</a>.
 ```
  
