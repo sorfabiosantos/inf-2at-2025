@@ -1,1 +1,23 @@
 <?php
+
+$host = "mysqllocal"; // localhost nos computadores da escola
+$user = "root";
+$password = "asdf1234"; // nos computadores da escola a senha é vazia ""
+$database = "db_company";
+$options = [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+];
+
+try {
+    $conn = new PDO(
+        "mysql:host=$host;dbname=$database",
+        $user,
+        $password,
+        $options
+    );
+} catch (PDOException $e) {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
+}
+
+echo "Conexão realizada com sucesso!";
