@@ -19,12 +19,3 @@ try {
 } catch (PDOException $e) {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
-
-echo "Conexão realizada com sucesso!";
-var_dump($conn);
-
-$sql = "SELECT * FROM users";
-
-$stmt = $conn->query($sql);
-var_dump($stmt->fetchAll());
-
