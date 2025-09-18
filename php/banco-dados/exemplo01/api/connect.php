@@ -21,3 +21,10 @@ try {
 }
 
 echo "Conexão realizada com sucesso!";
+var_dump($conn);
+
+$sql = "SELECT * FROM users";
+
+$stmt = $conn->query($sql);
+var_dump($stmt->fetchAll());
+
