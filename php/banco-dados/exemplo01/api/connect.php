@@ -1,8 +1,8 @@
 <?php
 
-$host = "mysqllocal"; // localhost nos computadores da escola
+$host = "mysqllocal"; // "localhost" nos computadores da escola
 $user = "root";
-$password = "asdf1234"; // nos computadores da escola a senha é vazia ""
+$password = "asdf1234"; // senha é vazia "" nos computadores da escola a
 $database = "db_company";
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

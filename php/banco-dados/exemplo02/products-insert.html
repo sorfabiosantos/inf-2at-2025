@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Inserir Produto</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body data-page="product-insert">
+<header>
+    <h1>Novo Produto</h1>
+    <nav aria-label="Menu principal">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="products-list.html">Lista de Produtos</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section aria-labelledby="form-titulo">
+        <h2 id="form-titulo">Formulário</h2>
+        <form id="productForm" aria-label="Inserção de produto" novalidate>
+            <fieldset>
+                <legend>Dados do Produto</legend>
+                <label for="nameInput"><span>Nome</span></label>
+                <input id="nameInput" name="name" required maxlength="120" placeholder="Ex: Smartphone X" autocomplete="off">
+
+                <label for="priceInput"><span>Preço (R$)</span></label>
+                <input id="priceInput" name="price" required type="number" step="0.01" min="0" placeholder="0,00">
+
+                <label for="categoryInsertSelect"><span>Categoria</span></label>
+                <select id="categoryInsertSelect" name="categoryId" required>
+                    <option value="">Selecione...</option>
+                    <option value="1">Eletrônicos</option>
+                    <option value="2">Informática</option>
+                    <option value="3">Eletrodomésticos</option>
+                    <option value="4">Móveis</option>
+                    <option value="5">Vestuário Masculino</option>
+                    <option value="6">Vestuário Feminino</option>
+                    <option value="7">Esporte e Lazer</option>
+                    <option value="8">Beleza e Higiene</option>
+                    <option value="9">Brinquedos</option>
+                    <option value="10">Livros</option>
+                </select>
+                <button type="submit">Salvar</button>
+                <button type="reset">Limpar</button>
+            </fieldset>
+        </form>
+        <p id="insertMessage" aria-live="polite"></p>
+    </section>
+    <section aria-labelledby="preview-titulo" id="previewSection" hidden>
+        <h2 id="preview-titulo">Pré-visualização Local</h2>
+        <article id="previewArticle"></article>
+    </section>
+</main>
+<footer>
+    <p><small>&copy; 2025 Inserção</small></p>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
