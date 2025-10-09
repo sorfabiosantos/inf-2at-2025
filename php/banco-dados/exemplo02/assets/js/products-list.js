@@ -1,17 +1,11 @@
 console.log("Products List...");
-// Criar uma funcão chamada renderProducts para renderizar os produtos no front
-
-function renderProducts (listProducts) {
-
-}
+// Criar uma função chamada renderProducts para renderizar os produtos no front
 
 const listContainer = document.querySelector("#itemsContainer");
-async function listProducts(){
-    const response = await fetch("api/products-list.php");
-    //console.log(response);
-    const products = await response.json();
-    //console.log(products.data);
-    products.data.forEach(product => {
+
+function renderProducts (listProducts) {
+    listContainer.innerHTML = "";
+    listProducts.forEach(product => {
         //console.log(product);
         const productArticle = document.createElement("article");
         productArticle.innerHTML = `
@@ -23,21 +17,23 @@ async function listProducts(){
 
 }
 
+async function listProducts(){
+    const response = await fetch("api/products-list.php");
+    const products = await response.json();
+    toast(products.type, products.message);
+    renderProducts(products.data);
+}
+
 listProducts();
 
 const categoryFilter = document.querySelector("#categoryFilter");
 
 categoryFilter.addEventListener("change", async () => {
-    //console.log("Olá, estou selecionando!");
-    //console.log(categoryFilter.value);
     const responseProductsByCategory = await fetch(`api/products-by-category.php?categoryId=${categoryFilter.value}`);
-    //console.log(responseProductsByCategory);
     const productsByCategory = await responseProductsByCategory.json();
-    console.log(productsByCategory.type);
+    toast(productsByCategory.type, productsByCategory.message);
     if(productsByCategory.type == "error"){
         return;
     }
-    productsByCategory.data.forEach(product => {
-        console.log(product);
-    });
+    renderProducts(productsByCategory.data);
 });
