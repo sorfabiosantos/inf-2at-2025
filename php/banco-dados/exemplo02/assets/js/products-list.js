@@ -2,10 +2,11 @@ console.log("Products List...");
 const listContainer = document.querySelector("#itemsContainer");
 async function listProducts(){
     const response = await fetch("api/products-list.php");
+    console.log(response);
     const products = await response.json();
-    //console.log(products.data);
+    console.log(products.data);
     products.data.forEach(product => {
-        console.log(product);
+        //console.log(product);
         const productArticle = document.createElement("article");
         productArticle.innerHTML = `
         <header><h3>${product.name}</h3></header>
