@@ -12,18 +12,18 @@
   </header>
   <main>
     <section aria-labelledby="registration-title">
-      <form method="post" action="#">
+      <form method="post" id="form-register">
         <fieldset>
           <legend id="registration-title">Cadastro de usuário</legend>
 
           <label for="reg-full-name">Nome completo</label>
-          <input id="reg-full-name" name="full_name" type="text" autocomplete="name" required>
+          <input id="reg-full-name" name="name" type="text" autocomplete="name" value="Fábi Santos">
 
           <label for="reg-email">E-mail</label>
-          <input id="reg-email" name="email" type="email" autocomplete="email" required>
+          <input id="reg-email" name="email" type="text" autocomplete="email" value="fabio@gmail.com">
 
           <label for="reg-password">Senha</label>
-          <input id="reg-password" name="password" type="password" autocomplete="new-password" required>
+          <input id="reg-password" name="password" type="password" autocomplete="new-password" value="1234567" >
 
           <button type="submit">Criar conta</button>
         </fieldset>
@@ -31,15 +31,15 @@
     </section>
 
     <section aria-labelledby="login-title">
-      <form method="post" action="#">
+      <form method="post" id="form-login">
         <fieldset>
           <legend id="login-title">Entrar</legend>
 
           <label for="login-email">E-mail</label>
-          <input id="login-email" name="email" type="email" autocomplete="email" required>
+          <input id="login-email" name="email" type="text" autocomplete="email" value="fabio@gmail.com">
 
           <label for="login-password">Senha</label>
-          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" value="1234567">
 
           <button type="submit">Entrar</button>
         </fieldset>
@@ -47,4 +47,5 @@
     </section>
   </main>
 </body>
+<script src="assets/js/login.js" async></script>
 </html>
