@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exemplo 03 — Cadastro e Login</title>
+    <link rel="stylesheet" href="assets/styles/login.css">
+</head>
+<body>
+  <header>
+    <h1>Acesso ao sistema</h1>
+  </header>
+  <main>
+    <section aria-labelledby="registration-title">
+      <form method="post" action="#">
+        <fieldset>
+          <legend id="registration-title">Cadastro de usuário</legend>
+
+          <label for="reg-full-name">Nome completo</label>
+          <input id="reg-full-name" name="full_name" type="text" autocomplete="name" required>
+
+          <label for="reg-email">E-mail</label>
+          <input id="reg-email" name="email" type="email" autocomplete="email" required>
+
+          <label for="reg-password">Senha</label>
+          <input id="reg-password" name="password" type="password" autocomplete="new-password" required>
+
+          <button type="submit">Criar conta</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section aria-labelledby="login-title">
+      <form method="post" action="#">
+        <fieldset>
+          <legend id="login-title">Entrar</legend>
+
+          <label for="login-email">E-mail</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" required>
+
+          <label for="login-password">Senha</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+
+          <button type="submit">Entrar</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
