@@ -39,6 +39,7 @@ formLogin.addEventListener("submit", async (e) => {
     console.log(user);
     toast(user.type, user.message);
     if(user.type === "success") {
+        // gravar os dados do usuário em localHost
         setTimeout(() => {
             window.location.href = "user-app.html";
         }, 5000);
