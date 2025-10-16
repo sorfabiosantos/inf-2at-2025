@@ -22,6 +22,7 @@ formRegister.addEventListener("submit", async (e) => {
     });
     const user = await response.json();
     console.log(user);
+    toast(user.type, user.message);
 
 });
 
@@ -36,4 +37,10 @@ formLogin.addEventListener("submit", async (e) => {
 
     const user = await response.json();
     console.log(user);
+    toast(user.type, user.message);
+    if(user.type === "success") {
+        setTimeout(() => {
+            window.location.href = "user-app.html";
+        }, 5000);
+    }
 });

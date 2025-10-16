@@ -124,3 +124,90 @@ button[type="submit"]:focus-visible { outline: 2px solid #93c5fd; outline-offset
   * { transition: none !important; }
 }
 
+/* ================= Toast ================= */
+#toast-root {
+    position: fixed;
+    inset: auto 0 1.25rem 0;
+    display:flex;
+    justify-content:center;
+    pointer-events:none;
+    z-index: 9999;
+    padding:0 .75rem;
+}
+.toast {
+    font: inherit;
+    min-width: 220px;
+    max-width: 440px;
+    background:#fff;
+    color:#1f2d3a;
+    border:1px solid #cfd9e3;
+    box-shadow:0 6px 18px -4px rgba(0,0,0,.18),0 2px 6px -2px rgba(0,0,0,.12);
+    border-radius:10px;
+    padding:.85rem 1rem;
+    margin:0;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:.75rem;
+    align-items:center;
+    animation: toast-in .42s cubic-bezier(.32,.72,.33,1.22);
+    pointer-events:auto;
+    position:relative;
+    overflow:hidden;
+}
+.toast + .toast { margin-left: .75rem; }
+.toast__icon { font-size:1.15rem; line-height:1; }
+.toast__msg { font-size:.85rem; line-height:1.3; }
+.toast__close {
+    appearance:none;
+    border:0;
+    background:transparent;
+    color:inherit;
+    cursor:pointer;
+    font-size:1rem;
+    padding:.15rem .25rem;
+    border-radius:4px;
+}
+.toast__close:hover, .toast__close:focus { background:#00000010; }
+.toast::before {
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width:6px;
+    background:#214b8f;
+}
+.toast--success::before { background:#0b7c3b; }
+.toast--error::before { background:#b40f2e; }
+.toast--warning::before { background:#c97900; }
+.toast--success { border-color:#0b7c3b55; }
+.toast--error { border-color:#b40f2e55; }
+.toast--warning { border-color:#c9790055; }
+.toast[data-leaving="true"] { animation: toast-out .35s ease forwards; }
+
+@media (max-width:640px){
+    #toast-root { inset:auto 0 .75rem 0; }
+    .toast { width:100%; max-width:600px; }
+    .toast + .toast { margin-left:.5rem; }
+}
+
+@keyframes toast-in {
+    from { opacity:0; transform:translateY(18px) scale(.96); }
+    to { opacity:1; transform:translateY(0) scale(1); }
+}
+@keyframes toast-out {
+    to { opacity:0; transform:translateY(10px) scale(.96); }
+}
+
+/* Barra de vida (auto dismiss) */
+.toast__life {
+    position:absolute;
+    inset:auto 0 0 0;
+    height:3px;
+    background:linear-gradient(90deg,#214b8f,#1b325d);
+    transform-origin:left;
+    animation: toast-life linear forwards;
+}
+.toast--success .toast__life { background:linear-gradient(90deg,#0b7c3b,#16a34a); }
+.toast--error .toast__life { background:linear-gradient(90deg,#b40f2e,#dc2626); }
+.toast--warning .toast__life { background:linear-gradient(90deg,#c97900,#d97706); }
+@keyframes toast-life { to { transform:scaleX(0); } }
+
