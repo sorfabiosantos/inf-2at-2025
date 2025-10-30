@@ -8,7 +8,6 @@ async function loadProducts() {
     products.data.forEach(product => {
         const productArticle = document.createElement("article");
         productArticle.innerHTML = `
-     <article>
          <header>
            <h3>${product.name}</h3>
              <p><small class="category">${product.categoryName}</small></p>
@@ -19,7 +18,7 @@ async function loadProducts() {
            <label class="switch">
            <input product-id="${product.id}" 
                   type="checkbox" 
-                  class="status-switch" ${product.status === 'online' ? 'checked' : ''}> ${product.status}
+                  class="status-switch" value="${product.status}" ${product.status === 'online' ? 'checked' : ''}> ${product.status}
          </label>
        </fieldset>
      </article>     
@@ -34,12 +33,26 @@ loadProducts();
 
 
 
-listProductsSection.addEventListener('click', (event) => {
+listProductsSection.addEventListener('click', async (event) => {
     console.log(event.target.tagName);
     if(event.target.tagName === 'INPUT') {
         const productId = event.target.getAttribute('product-id');
-        console.log(productId);
-        toast("success", "Mensagem de teste");
+        console.log(event.target.value);
+        const statusProduct = "";
+
+        if(event.target.value == 'online') {
+            const statusProduct = 'offline';
+            event.target.value = 'offline';
+        } else
+        {
+            const statusProduct = 'online';
+            event.target.value = 'online';
+        }
+
+        const response = await fetch(`api/products-update-status.php?status=${statusProduct}&productId=${productId}`);
+        const product = await response.json();
+        console.log(product);
+
     }
     event.stopPropagation();
 });
