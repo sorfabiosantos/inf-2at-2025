@@ -18,7 +18,7 @@ $options = [
 try {
     $conn = new PDO($dsn, $user, $password, $options);
 } catch (PDOException $e) {
-    $mensagem = "Erro ao conectar ao banco (" . ($e->getMessage() ?: 'sem código') . ")";
+    $mensagem = "Erro ao conectar ao banco (" . ($e->getCode() ?: 'sem código') . ")";
     $response = [
         "message" => $mensagem . ": " . htmlspecialchars($e->getMessage()),
         "type" => "error",
