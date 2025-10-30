@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `db_company` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `db_company`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_company
@@ -18,8 +20,7 @@
 --
 -- Table structure for table `categories`
 --
-CREATE DATABASE  IF NOT EXISTS `db_company` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_company`;
+
 DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -52,10 +53,11 @@ CREATE TABLE `products` (
   `categoryId` int NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` float(10,2) NOT NULL,
+  `status` varchar(10) NOT NULL DEFAULT 'offline',
   PRIMARY KEY (`id`),
   KEY `fk_products_categories_idx` (`categoryId`),
   CONSTRAINT `fk_products_categories` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +66,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,1,'Smartphone Samsung Galaxy A55',1899.00),(2,1,'Smart TV LG 55\" 4K',2799.90),(3,1,'Fone Bluetooth JBL Tune 520',299.00),(4,2,'Notebook Dell Inspiron 15',3899.00),(5,2,'Mouse Gamer Logitech G203',149.90),(6,2,'Teclado Mecânico Redragon Kumara',229.90),(7,3,'Geladeira Frost Free Brastemp 375L',3499.00),(8,3,'Máquina de Lavar Electrolux 11kg',2599.00),(9,3,'Micro-ondas Panasonic 30L',749.00),(10,4,'Sofá 3 Lugares Retrátil Cinza',2199.00),(11,4,'Mesa de Jantar 6 Cadeiras MDF',1599.00),(12,4,'Cadeira Ergonômica Office Preta',899.00),(13,5,'Camiseta Algodão Básica Masculina',49.90),(14,5,'Calça Jeans Masculina Slim',159.90),(15,5,'Jaqueta Corta-Vento Masculina',239.90),(16,6,'Vestido Midi Floral Feminino',189.90),(17,6,'Blusa Tricot Feminina Bege',129.90),(18,6,'Tênis Casual Branco Feminino',219.90),(19,7,'Bicicleta Aro 29 MTB Alumínio',1899.00),(20,7,'Bola Oficial Futebol Campo',129.90),(21,7,'Colchonete Yoga Premium',89.90),(22,8,'Shampoo Reconstrução 400ml',29.90),(23,8,'Creme Hidratante Corporal 200ml',34.90),(24,8,'Barbeador Elétrico Philips',279.00),(25,9,'Lego Classic Caixa Criativa Média',249.90),(26,9,'Quebra-Cabeça 1000 Peças Paisagem',69.90),(27,9,'Boneca Articulada Fashion 30cm',119.90),(28,10,'Livro Dom Casmurro - Machado de Assis',34.90),(29,10,'Livro Clean Code - Robert C. Martin',149.90),(30,10,'Livro O Hobbit - J.R.R. Tolkien',59.90);
+INSERT INTO `products` VALUES (1,1,'Smartphone Samsung Galaxy A55',1899.00,'offline'),(2,1,'Smart TV LG 55\" 4K',2799.90,'offline'),(3,1,'Fone Bluetooth JBL Tune 520',299.00,'offline'),(4,2,'Notebook Dell Inspiron 15',3899.00,'online'),(5,2,'Mouse Gamer Logitech G203',149.90,'online'),(6,2,'Teclado Mecânico Redragon Kumara',229.90,'online'),(7,3,'Geladeira Frost Free Brastemp 375L',3499.00,'offline'),(8,3,'Máquina de Lavar Electrolux 11kg',2599.00,'online'),(9,3,'Micro-ondas Panasonic 30L',749.00,'offline'),(10,4,'Sofá 3 Lugares Retrátil Cinza',2199.00,'online'),(11,4,'Mesa de Jantar 6 Cadeiras MDF',1599.00,'offline'),(12,4,'Cadeira Ergonômica Office Preta',899.00,'offline'),(13,5,'Camiseta Algodão Básica Masculina',49.90,'offline'),(14,5,'Calça Jeans Masculina Slim',159.90,'offline'),(15,5,'Jaqueta Corta-Vento Masculina',239.90,'offline'),(16,6,'Vestido Midi Floral Feminino',189.90,'offline'),(17,6,'Blusa Tricot Feminina Bege',129.90,'offline'),(18,6,'Tênis Casual Branco Feminino',219.90,'offline'),(19,7,'Bicicleta Aro 29 MTB Alumínio',1899.00,'offline'),(20,7,'Bola Oficial Futebol Campo',129.90,'offline'),(21,7,'Colchonete Yoga Premium',89.90,'offline'),(22,8,'Shampoo Reconstrução 400ml',29.90,'offline'),(23,8,'Creme Hidratante Corporal 200ml',34.90,'offline'),(24,8,'Barbeador Elétrico Philips',279.00,'offline'),(25,9,'Lego Classic Caixa Criativa Média',249.90,'offline'),(26,9,'Quebra-Cabeça 1000 Peças Paisagem',69.90,'offline'),(27,9,'Boneca Articulada Fashion 30cm',119.90,'offline'),(28,10,'Livro Dom Casmurro - Machado de Assis',34.90,'offline'),(29,10,'Livro Clean Code - Robert C. Martin',149.90,'offline'),(30,10,'Livro O Hobbit - J.R.R. Tolkien',59.90,'online'),(31,1,'iPhone 17',11000.00,'online'),(32,2,'Computador DELL Super the Best',15555.00,'online');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +83,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +92,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Fábio Santos','fabiosantos@ifsul.edu.br','12345678'),(2,'Monteiro Lobato','monteiro@gmail.com','12345678'),(3,'Machado de Assis','machado@gmail.com','12345678');
+INSERT INTO `users` VALUES (1,'Fábio Santos','fabiosantos@ifsul.edu.br','12345678'),(2,'Monteiro Lobato','monteiro@gmail.com','12345678'),(3,'Machado de Assis','machado@gmail.com','12345678'),(5,'Godofredo','godofredo@gmail.com','12345678'),(6,'meu nome','meu e-mail','minhsa senha'),(7,'Fábi Santos','fabio@gmail.com','$2y$10$0IlyCs.5sttwe8CWOOxRs.bhomY11S6Rr8XgzMTylCDtlPf5bcHV.'),(11,'Fábi Santos','fabio01@gmail.com','$2y$10$.jzMTBqM5OOvG5l/KNET.ODfTmaCtOfDUZIDkUFfv25fO89aqPZMq'),(13,'Fábi Santos','fabio10@gmail.com','$2y$10$AOzW7hDCIFDo8zXZDtV3d.zkDY.ZfDJkPAJr/0WlgkgCZMeFQlgBa'),(14,'Fábio Santos Fábio','fabio3268@gmail.com','$2y$10$Sr1S1q2d6Sr7CIMe1NTPsuvU99XNM3aV.RJIevKQUg1GJO6BQT7k.'),(15,'Fábi Santos','fabio23456@gmail.com','$2y$10$iSDc61UFuo.AX6/IU988qunvG9mzqFj/CFxwE2xkSdhcgVSFY9cBG');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -103,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-18  6:41:25
+-- Dump completed on 2025-10-30 14:37:30
