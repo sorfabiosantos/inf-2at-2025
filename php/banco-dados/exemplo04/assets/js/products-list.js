@@ -38,20 +38,21 @@ listProductsSection.addEventListener('click', async (event) => {
     if(event.target.tagName === 'INPUT') {
         const productId = event.target.getAttribute('product-id');
         console.log(event.target.value);
-        const statusProduct = "";
+        let statusProduct = "";
 
         if(event.target.value == 'online') {
-            const statusProduct = 'offline';
+            statusProduct = 'offline';
             event.target.value = 'offline';
         } else
         {
-            const statusProduct = 'online';
+            statusProduct = 'online';
             event.target.value = 'online';
         }
 
         const response = await fetch(`api/products-update-status.php?status=${statusProduct}&productId=${productId}`);
         const product = await response.json();
         console.log(product);
+        toast(product.toString, product.message);
 
     }
     event.stopPropagation();
