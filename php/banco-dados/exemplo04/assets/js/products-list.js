@@ -31,8 +31,6 @@ async function loadProducts() {
 
 loadProducts();
 
-
-
 listProductsSection.addEventListener('click', async (event) => {
     console.log(event.target.tagName);
     if(event.target.tagName === 'INPUT') {
