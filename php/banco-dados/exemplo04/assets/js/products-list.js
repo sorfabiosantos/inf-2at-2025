@@ -18,15 +18,14 @@ async function loadProducts() {
            <label class="switch">
            <input product-id="${product.id}" 
                   type="checkbox" 
-                  class="status-switch" value="${product.status}" ${product.status === 'online' ? 'checked' : ''}> ${product.status}
+                  class="status-switch" value="${product.status}" ${product.status === 'online' ? 'checked' : ''}>
+                  <span>${product.status}</span>
          </label>
        </fieldset>
      </article>     
      `;
         listProductsSection.appendChild(productArticle);
     });
-
-
 }
 
 loadProducts();
@@ -41,10 +40,14 @@ listProductsSection.addEventListener('click', async (event) => {
         if(event.target.value == 'online') {
             statusProduct = 'offline';
             event.target.value = 'offline';
+            // acessar o próximo elemento após o event.target
+            event.target.nextElementSibling.textContent = 'offline';
+
         } else
         {
             statusProduct = 'online';
             event.target.value = 'online';
+            event.target.nextElementSibling.textContent = 'online';
         }
 
         const response = await fetch(`api/products-update-status.php?status=${statusProduct}&productId=${productId}`);
