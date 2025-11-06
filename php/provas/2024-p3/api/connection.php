@@ -1,9 +1,9 @@
 <?php
 
-$host = "mysqllocal"; // na escola é "localhost"
+$host = "localhost"; // na escola é "localhost"
 $port = 3306;
 $user = "root";
-$password = "asdf1234"; // na escola é sem senha pode ser ""
+$password = ""; // na escola é sem senha pode ser ""
 $database = "db_consultation";
 $charset = 'utf8mb4';
 
@@ -26,3 +26,9 @@ try {
     echo json_encode($response);
     exit;
 }
+
+$stmt = $conn->query("SELECT * FROM specialities");
+
+$specialities = $stmt->fetchAll();
+
+var_dump($specialities);
