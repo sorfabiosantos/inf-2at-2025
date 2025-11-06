@@ -8,32 +8,32 @@ CREATE TABLE patients (
                           id INT AUTO_INCREMENT PRIMARY KEY,
                           name VARCHAR(255) NOT NULL,
                           age INTEGER NOT NULL,
-                          medical_record VARCHAR(50) UNIQUE NOT NULL,
+                          medical_record VARCHAR(50) NOT NULL,
                           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Criação da tabela de especialidades
 CREATE TABLE specialities (
-                             id INT AUTO_INCREMENT PRIMARY KEY,
-                             name VARCHAR(100) NOT NULL UNIQUE
+                              id INT AUTO_INCREMENT PRIMARY KEY,
+                              name VARCHAR(100) NOT NULL UNIQUE
 );
 
 -- Inserir 10 especialidades médicas
 INSERT INTO specialities (name) VALUES
-                                   ('Cardiologia'),
-                                   ('Pediatria'),
-                                   ('Ortopedia'),
-                                   ('Ginecologia'),
-                                   ('Neurologia'),
-                                   ('Oncologia'),
-                                   ('Dermatologia'),
-                                   ('Psiquiatria'),
-                                   ('Endocrinologia'),
-                                   ('Urologia'),
-                                   ('Oftalmologia'),
-                                   ('Otorrinolaringologia'),
-                                   ('Nutrologia'),
-                                   ('Cirurgia Geral');
+                                    ('Cardiologia'),
+                                    ('Pediatria'),
+                                    ('Ortopedia'),
+                                    ('Ginecologia'),
+                                    ('Neurologia'),
+                                    ('Oncologia'),
+                                    ('Dermatologia'),
+                                    ('Psiquiatria'),
+                                    ('Endocrinologia'),
+                                    ('Urologia'),
+                                    ('Oftalmologia'),
+                                    ('Otorrinolaringologia'),
+                                    ('Nutrologia'),
+                                    ('Cirurgia Geral');
 
 -- Criação da tabela de médicos
 CREATE TABLE doctors (
