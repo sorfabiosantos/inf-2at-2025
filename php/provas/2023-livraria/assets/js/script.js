@@ -46,7 +46,6 @@ const selectCategories = document.querySelector("#category");
 const selectCategoriesModal = document.querySelector("#category_id");
 
 const urlGetCategories = "api/categories-list.php";
-
 const optionsGet = {
     method: "GET"
 };
