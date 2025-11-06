@@ -4,7 +4,7 @@ $host = "localhost"; // na escola é "localhost"
 $port = 3306;
 $user = "root";
 $password = ""; // na escola é sem senha pode ser ""
-$database = "db_consultation";
+$database = "db_book_store";
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host={$host};port={$port};dbname={$database};charset={$charset}";
