@@ -9,8 +9,18 @@ document.querySelector("h1").addEventListener("click", (event) => {
 });
 
 const formPatientRegister = document.querySelector("#patientForm");
-formPatientRegister.addEventListener("submit", (event) => {
+formPatientRegister.addEventListener("submit", async (event) => {
     event.preventDefault();
     // restante do código
+
+    const response = await fetch(`api/patient-insert.php`, {
+        method: "POST",
+        body: new FormData(formPatientRegister)
+    });
+
+    console.log(response);
+    const patient = await response.json();
+    console.log(patient);
+    showToast(patient.message, patient.type);
 
 });

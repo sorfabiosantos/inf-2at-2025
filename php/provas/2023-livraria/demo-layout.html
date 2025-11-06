@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Demo - Novo Layout da Livraria</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .demo-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px dashed var(--border-color);
+        }
+        .demo-title {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .color-box {
+            padding: 2rem 1rem;
+            border-radius: var(--radius);
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: var(--shadow);
+        }
+        .btn-demo {
+            display: inline-block;
+            margin: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Demonstração - Novo Layout</h1>
+
+        <!-- PALETA DE CORES -->
+        <section class="demo-section">
+            <div class="demo-title">🎨 Paleta de Cores</div>
+            <div class="color-palette">
+                <div class="color-box" style="background: var(--primary-color); color: white;">
+                    Primary<br>#8b4513
+                </div>
+                <div class="color-box" style="background: var(--primary-dark); color: white;">
+                    Primary Dark<br>#654321
+                </div>
+                <div class="color-box" style="background: var(--accent-color); color: white;">
+                    Accent<br>#d4af37
+                </div>
+                <div class="color-box" style="background: var(--success-color); color: white;">
+                    Success<br>#10b981
+                </div>
+                <div class="color-box" style="background: var(--error-color); color: white;">
+                    Error<br>#ef4444
+                </div>
+                <div class="color-box" style="background: var(--warning-color); color: white;">
+                    Warning<br>#f59e0b
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO -->
+        <section class="demo-section">
+            <div class="demo-title">📝 Formulário Estilizado</div>
+            <form>
+                <label for="demo-title">Título do Livro:</label>
+                <input type="text" id="demo-title" placeholder="Digite o título...">
+
+                <label for="demo-category">Categoria:</label>
+                <select id="demo-category">
+                    <option value="">Selecione uma categoria</option>
+                    <option value="1">Ficção</option>
+                    <option value="2">Não-Ficção</option>
+                    <option value="3">Romance</option>
+                    <option value="4">Técnico</option>
+                </select>
+
+                <label for="demo-price">Preço:</label>
+                <input type="text" id="demo-price" placeholder="R$ 0,00">
+
+                <button type="button">💾 Salvar Livro</button>
+            </form>
+        </section>
+
+        <!-- BOTÕES -->
+        <section class="demo-section">
+            <div class="demo-title">🔘 Variações de Botões</div>
+            <button type="submit" class="btn-demo">Botão Submit</button>
+            <button type="button" class="btn-demo" style="background: linear-gradient(135deg, var(--success-color), #059669);">
+                Botão Success
+            </button>
+            <button type="button" class="btn-demo" style="background: linear-gradient(135deg, var(--error-color), #dc2626);">
+                Botão Delete
+            </button>
+            <button type="button" class="btn-demo" style="background: linear-gradient(135deg, var(--warning-color), #d97706);">
+                Botão Warning
+            </button>
+        </section>
+
+        <!-- TABELA -->
+        <section class="demo-section">
+            <div class="demo-title">📊 Tabela Moderna</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>O Senhor dos Anéis</td>
+                        <td>Fantasia</td>
+                        <td>R$ 89,90</td>
+                        <td><button>X</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1984</td>
+                        <td>Ficção</td>
+                        <td>R$ 45,00</td>
+                        <td><button>X</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Clean Code</td>
+                        <td>Técnico</td>
+                        <td>R$ 120,00</td>
+                        <td><button>X</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Harry Potter</td>
+                        <td>Fantasia</td>
+                        <td>R$ 55,90</td>
+                        <td><button>X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- MENSAGENS -->
+        <section class="demo-section">
+            <div class="demo-title">💬 Sistema de Mensagens</div>
+
+            <div id="msg-success" class="message success">
+                ✓ Livro cadastrado com sucesso!
+            </div>
+
+            <div id="msg-error" class="message error">
+                ✕ Erro ao processar a requisição. Tente novamente.
+            </div>
+
+            <div id="msg-warning" class="message warning">
+                ⚠ Atenção: Preencha todos os campos obrigatórios.
+            </div>
+        </section>
+
+        <!-- FILTRO -->
+        <section class="demo-section">
+            <div class="demo-title">🔍 Filtro de Categoria</div>
+            <div class="filter">
+                <label for="demo-filter">Categoria:</label>
+                <select id="demo-filter">
+                    <option value="">Todas as categorias</option>
+                    <option value="1">Ficção</option>
+                    <option value="2">Não-Ficção</option>
+                    <option value="3">Romance</option>
+                    <option value="4">Técnico</option>
+                    <option value="5">Fantasia</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- CARACTERÍSTICAS -->
+        <section>
+            <div class="demo-title">✨ Características do Novo Layout</div>
+            <ul style="list-style-position: inside; line-height: 2; color: var(--text-secondary);">
+                <li>🎨 <strong>Tema de Livraria:</strong> Cores marrom e dourado que remetem a livros clássicos</li>
+                <li>✨ <strong>Animações Suaves:</strong> Transições elegantes em todos os elementos</li>
+                <li>📱 <strong>100% Responsivo:</strong> Adapta-se perfeitamente a todos os dispositivos</li>
+                <li>🎭 <strong>Modal Moderna:</strong> Com blur effect e animações de entrada</li>
+                <li>📊 <strong>Tabela Interativa:</strong> Hover effects com escala e sombra</li>
+                <li>🔘 <strong>Botões com Gradiente:</strong> Visual moderno e profissional</li>
+                <li>💬 <strong>Mensagens Coloridas:</strong> Feedback visual claro e atrativo</li>
+                <li>🌟 <strong>Detalhes Decorativos:</strong> Ícone de livro e linhas de separação</li>
+                <li>♿ <strong>Acessível:</strong> Bom contraste e navegação por teclado</li>
+                <li>⚡ <strong>Performance:</strong> CSS puro, sem dependências</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- DEMO DE MODAL -->
+    <div id="edit-modal" class="modal" style="display: block; position: relative; height: auto; background: transparent; margin-top: 3rem;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>📖 Modal de Edição</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Esta é uma prévia da modal de edição de livros.
+            </p>
+            <form>
+                <label for="modal-title">Título:</label>
+                <input type="text" id="modal-title" value="O Pequeno Príncipe">
+
+                <label for="modal-category">Categoria:</label>
+                <select id="modal-category">
+                    <option value="1" selected>Ficção</option>
+                    <option value="2">Romance</option>
+                </select>
+
+                <label for="modal-price">Preço:</label>
+                <input type="text" id="modal-price" value="R$ 35,00">
+
+                <button type="button">✓ Atualizar Livro</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Demo interativa - apenas para visualização
+        document.querySelector('.close').addEventListener('click', function() {
+            alert('No sistema real, isso fecharia a modal!');
+        });
+
+        // Hover na tabela
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            row.addEventListener('click', function() {
+                alert('No sistema real, isso abriria a modal de edição!');
+            });
+        });
+    </script>
+</body>
+</html>
+
