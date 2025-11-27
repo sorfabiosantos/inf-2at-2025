@@ -33,30 +33,30 @@ Acessibilidade (importante para estudante cego):
 Agora escreva o código seguindo os PASSOS abaixo.
 */
 
-// PASSO 1: declare e atribua valores às variáveis $aluno, $nota1, $nota2, $nota3
-// Sugestão de exemplo: $aluno = "João"; $nota1 = 6.5; $nota2 = 7.0; $nota3 = 8.0;
+PASSO 1: declare e atribua valores às variáveis $aluno, $nota1, $nota2, $nota3
+Sugestão de exemplo: $aluno = "João"; $nota1 = 6.5; $nota2 = 7.0; $nota3 = 8.0;
 
-// PASSO 2: declare e atribua valores aos pesos $peso1, $peso2, $peso3
-// Sugestão: $peso1 = 2; $peso2 = 3; $peso3 = 5;
+PASSO 2: declare e atribua valores aos pesos $peso1, $peso2, $peso3
+Sugestão: $peso1 = 2; $peso2 = 3; $peso3 = 5;
 
-// PASSO 3: calcule a soma dos pesos em $somaPesos
-// Exemplo: $somaPesos = $peso1 + $peso2 + $peso3;
+PASSO 3: calcule a soma dos pesos em $somaPesos
+Exemplo: $somaPesos = $peso1 + $peso2 + $peso3;
 
-// PASSO 4: calcule a média ponderada em $media
-// Fórmula: ($nota1 * $peso1 + $nota2 * $peso2 + $nota3 * $peso3) / $somaPesos
+PASSO 4: calcule a média ponderada em $media
+Fórmula: ($nota1 * $peso1 + $nota2 * $peso2 + $nota3 * $peso3) / $somaPesos
 
-// PASSO 5: determine a situação usando IF / ELSEIF / ELSE
+PASSO 5: determine a situação usando if / else
 /*
 Se $media >= 7 -> $situacao = "aprovado";
 Senão se $media >= 5 -> $situacao = "de recuperação";
 Senão -> $situacao = "reprovado";
 */
 
-// PASSO 6: formate a média usando number_format e monte a mensagem final em $mensagem
-// Exemplo: $mediaFormatada = number_format($media, 2, ',', '.');
-// Depois: $mensagem = "$aluno foi APROVADO com média $mediaFormatada." (ajuste o texto conforme a situação)
+PASSO 6: formate a média usando number_format e monte a mensagem final em $mensagem
+Exemplo: $mediaFormatada = number_format($media, 2, ',', '.');
+Depois: $mensagem = "$aluno foi APROVADO com média $mediaFormatada." (ajuste o texto conforme a situação)
 
-// PASSO 7: exiba a mensagem usando echo
-// echo $mensagem;
+PASSO 7: exiba a mensagem usando echo
+
 
 ?>
